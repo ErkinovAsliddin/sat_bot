@@ -1,7 +1,7 @@
 # admin.py
 # Admin panel and administrative functions
 
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes, ConversationHandler
 from database import db
 from keyboards import *
@@ -192,7 +192,6 @@ async def delete_question_confirm(update: Update, context: ContextTypes.DEFAULT_
         # Show question details and confirm
         q_text = question[1] if question[1] else "📸 Image Question"
         
-        from telegram import InlineKeyboardMarkup, InlineKeyboardButton
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("✅ Yes, Delete", callback_data=f"confirm_del:{qid}"),
              InlineKeyboardButton("❌ Cancel", callback_data="cancel_del")]
@@ -234,7 +233,6 @@ async def view_all_questions(update: Update, context: ContextTypes.DEFAULT_TYPE)
         return
     
     # Show filter options
-    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("📐 Math Only", callback_data="filter:Math"),
          InlineKeyboardButton("📚 English Only", callback_data="filter:English")],

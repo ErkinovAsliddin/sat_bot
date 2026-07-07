@@ -1,8 +1,17 @@
 # config.py
 # Bot Configuration
 
-API_TOKEN = "8248230964:AAE5_PU8UHMQgLLC8eowwxBVoqMmtyziGiM"
-ADMIN_IDS = [5662658550]
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Use environment variable for API token (NEVER hardcode in production)
+API_TOKEN = os.getenv("BOT_API_TOKEN", "YOUR_TOKEN_HERE")
+
+# Admin IDs - can also be stored in environment
+ADMIN_IDS = [int(x) for x in os.getenv("ADMIN_IDS", "5662658550").split(",")]
 
 # Mock test settings
 MOCK_TOTAL_QUESTIONS = 20

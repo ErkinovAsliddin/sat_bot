@@ -1,0 +1,43 @@
+# Telegram Bot Configuration
+.env
+.env.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives (don't version control)
+*.rar
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/

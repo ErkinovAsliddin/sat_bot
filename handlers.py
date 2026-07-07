@@ -1,6 +1,8 @@
 # handlers.py
 # User-facing command and message handlers
 
+import asyncio
+from datetime import datetime
 from telegram import Update
 from telegram.ext import ContextTypes
 from database import db
@@ -365,5 +367,3 @@ async def send_question(context: ContextTypes.DEFAULT_TYPE, chat_id: int,
                 reply_markup=keyboard,
                 parse_mode='HTML'
             )
-
-import asyncio
